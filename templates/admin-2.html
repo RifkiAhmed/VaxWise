@@ -1,0 +1,107 @@
+{% extends "admin-1.html" %}
+
+{% block title %}VaxWise | Hospitals{% endblock %}
+
+{% block content %}
+<div class="container-fluid content">
+    <div class="row">
+        <div class="col-md-6">
+            <div class="row">
+                <div class="container col-md-2 col-sm-12">
+                    <h5 align="center">Add Hospital :</h5>
+                </div>
+                <div class="container col-md-10 col-sm-12">
+                    <form onsubmit="addHospital(event)">
+                        <div class="form-group col-md-10" style="display: flex;">
+                            <input type="text" class="form-control" id="hospital_name" name="name" style="padding: 10px; background-color: #e0fbfc;" placeholder="Enter hospital name" />
+                            <button type="submit" class="confirm-btn" style="margin: 0px 10px; background-color: #427aa1;">
+                              Add
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+            <p id='error_message-1' style="text-align: center;">&nbsp;</p>
+            <div style="max-height: 500px; overflow-y: auto;">
+                <table class="container table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th colspan="2" style="background-color: #05668d; color: #ebf2fa;">
+                              <h4>List of hospitals</h4>
+                            </th>
+                        </tr>
+                        <tr>
+                            <th>Hospital</th>
+                            <th>Nurses</th>
+                        </tr>
+                    </thead>
+                    <tbody style="background-color: #ebf2fa;">
+                        {% for hospital in hospitals %}
+                        <tr>
+                            <td>{{ hospital.name }}</td>
+                            <td>{{ hospital.nurses|length }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="col-md-6">
+            <div class="container col-md-6 col-sm-10">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <h6>&nbsp;&nbsp;&nbsp;&nbsp;Search for nurses / vaccines by hospital</h6>
+                            <div class="form-group col-md-12" style="display: flex;">
+                            <select class="container" id="hospital-5" name="hospital-5">
+                                <option value="0" disabled selected>Hospital</option>
+                                {% for hospital in hospitals %}
+                                <option value="{{ hospital.id }}">{{ hospital.name }}</option>
+                                {% endfor %}
+                            </select>
+                            <button class="confirm-btn" onclick="fetchData()" style="margin: 0px 10px; background-color: #427aa1;">
+                              Search
+                            </button>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" id="nurses_radio-1"
+                                    name="hospital_radio" value="nurses">
+                                <label class="custom-control-label" for="nurses_radio-1" style="color: #000">Nurses</label>
+                            </div>
+                            <div class="custom-control custom-radio">
+                                <input type="radio" class="custom-control-input" id="vaccines_radio-1"
+                                    name="hospital_radio" value="vaccines">
+                                <label class="custom-control-label" for="vaccines_radio-1" style="color: #000">Vaccines</label>
+                            </div>
+                        </div>
+                    </div>
+                <hr>
+            </div>
+            <div class="container col-md-7 col-sm-11" style="max-height: 500px; overflow-y: auto;">
+                <table id="nurses_info" class="container-fluid table-hover table-striped" style="display: none;">
+                    <thead>
+                        <tr style="background-color: #05668d; color: #ebf2fa;">
+                            <th><h4>Nurses</h4></th>
+                        </tr>
+                    </thead>
+                    <tbody id="table_nurses_body" style="background-color: #ebf2fa;">
+                    </tbody>
+                </table>
+                <table id="vaccines_info" class="container-fluid table-hover table-striped" style="display: none;" >
+                    <thead>
+                        <tr style="background-color: #05668d; color: #ebf2fa;">
+                            <th><h4>Vaccine denomination</h4></th>
+                            <th><h4>Stock</h4></th>
+                        </tr>
+                    </thead>
+                    <tbody id="table_vaccines_body" style="background-color: #ebf2fa;">
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="../static/scripts/admin-2.js"></script>
+{% endblock %}

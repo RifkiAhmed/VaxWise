@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <title>{% block title %}{% endblock %}</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <link rel='shortcut icon' href="../static/images/icon.png" />
+  <link rel="stylesheet" href="../static/styles/footer.css" />
+  <link rel="stylesheet" href="../static/styles/common.css" />
+  <link rel="stylesheet" href="../static/styles/table.css" />
+  <link rel="stylesheet" href="../static/styles/sign-in_sign-up.css" />
+  <link rel="stylesheet" href="../static/styles/home.css" />
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+    integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+  <link href='https://fonts.googleapis.com/css?family=Aclonica' rel='stylesheet'>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body class="home">
+
+  <header class="container-fluid">
+    <a class="navbar-brand">
+      <img src="../static/images/logo.png" alt="Logo">
+    </a>
+  </header>
+
+  <div class="container-fluid content intro">
+    <div class="row">
+      <div class="div col-sm-12 col-xl-6">
+        <div class="container col-sm-12 col-md-10">
+          <h1>Welcome to VaxWise</h1>
+          <h5><strong> Never Miss a Vaccine, Safeguarding Your Child's Health</strong></h5>
+          <p>At VaxWise, We understand the importance of
+            keeping your child's
+            vaccinations up-to-date. Our mission is to make managing and scheduling
+            vaccinations a seamless and stress-free experience for parents.</p>
+          <a href="/vaccines-table" style="font-size: larger; text-decoration: underline;">vaccination table</a>
+        </div>
+      </div>
+      <div class="div col-sm-12 col-xl-6">
+        {% block signInSingUp %}
+
+        {% endblock %}
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    VaxWise - 2023 | <a href="https://github.com/RifkiAhmed" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+  </footer>
+
+  {% block js %}
+
+  {% endblock %}
+
+</body>
+
+</html>

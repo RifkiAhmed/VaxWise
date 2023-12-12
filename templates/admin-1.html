@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="utf-8" />
+    <title>{% block title %}VaxWise | Dashboard{% endblock %}</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel='shortcut icon' href="../static/images/icon.png" />
+    <link rel="stylesheet" href="../static/styles/header.css" />
+    <link rel="stylesheet" href="../static/styles/footer.css" />
+    <link rel="stylesheet" href="../static/styles/common.css" />
+    <link rel="stylesheet" href="../static/styles/table.css" />
+    <link rel="stylesheet" href="../static/styles/sign-in_sign-up.css" />
+    <link rel="stylesheet" href="../static/styles/home.css" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css"
+        integrity="sha384-Vkoo8x4CGsO3+Hhxv8T/Q5PaXtkKtu6ug5TOeNV6gBiFeWPGFN9MuhOf23Q9Ifjh" crossorigin="anonymous" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js?"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.11.6/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- show navbar menu -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+</head>
+
+<body>
+
+    <!-- Header -->
+    <header class="container-fluid home_navbar">
+        <nav class="navbar navbar-expand-md">
+            <a class="navbar-brand">
+                <img src="../static/images/logo.png" alt="Logo">
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbar">
+                <i class="fas fa-bars menu-icon"></i>
+            </button>
+            <div class="collapse navbar-collapse" id="navbar">
+                <ul class="navbar-nav mr-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" id="home" href="/admin">Overview</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="vaccine" href="/hospitals">Hospitals</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="vaccine" href="/nurses">Nurses</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" id="vaccine" href="/vaccines">Vaccination table</a>
+                    </li>
+                </ul>
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link" id="logout" href="/logout">Logout</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    {% block content %}
+    <div class="container-fluid content">
+        <div class="row">
+            <div class="col-xl-6">
+                <h5 style="color: #ebf2fa; text-align: center; margin: 0px; padding: 20px; border-radius: 18px; background-color: #427aa1">
+                  Healthcare Stats
+                </h5>
+                <br />
+                <div class="circular-container container">
+
+                    <div class="circular">
+                        <p><i class="fas fa-hospital fa-2x"></i></p>
+                        <h6>Hospitals</h6>
+                        <p>{{ hospitals|length }}</p>
+                    </div>
+                    <div class="circular">
+                        <p><i class="fas fa-user-nurse fa-2x"></i></p>
+                        <h6>Nurses</h6>
+                        <p>{{ statistics['nurses'] }}</p>
+                    </div>
+                    <div class="circular">
+                        <p><i class="fas fa-user-friends fa-2x"></i></p>
+                        <h6>Parents</h6>
+                        <p>{{ statistics['parents'] }}</p>
+                    </div>
+                    <div class="circular">
+                        <p><i class="fas fa-child fa-2x"></i></p>
+                        <h6>Children</h6>
+                        <p>{{ statistics['childs'] }}</p>
+                    </div>
+                </div>
+                <br>
+                <br>
+            </div>
+            <div class="col-xl-6">
+                <table class="container col-md-10 table-hover table-striped">
+                    <thead>
+                        <tr>
+                            <th colspan="3" style="background-color: #427aa1;">
+                                <h4>Vaccine Stock Overview</h4>
+                            </th>
+                        </tr>
+                        <tr style="background-color: #ebf2fa;">
+                            <th style="text-align: left;">Vaccine Name</th>
+                            <th>Stock Level</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody  style="background-color: #ebf2fa;">
+                        {% for key, value in vaccine_status.items() %}
+                        <tr>
+                            <td style="text-align: left;">{{ key }}</td>
+                            <td>{{ value.stock }}</td>
+                            <td class="{{ value.status }}">{{ value.status }}</td>
+                        </tr>
+                        {% endfor %}
+                    </tbody>
+                </table>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-xl-6 chart">
+                <canvas class="container col-md-10" id="professionalsChart"></canvas>
+            </div>
+            <div class="col-xl-6 chart">
+                <canvas class="container col-md-10" id="vaccinationChart"></canvas>
+            </div>
+        </div>
+    </div>
+    {% endblock %}
+
+    <footer>
+        VaxWise - 2023 | <a href="https://github.com/RifkiAhmed" target="_blank"><i class="fab fa-github"></i> GitHub</a>
+    </footer>
+    {% block js %}
+    <script>
+        const nursessData = {{ nurses_count | safe }};
+        const hospitalNames = nursessData.map(item => item[0]);
+        const nursesCounts = nursessData.map(item => item[1]);
+        const ctx = document.getElementById('professionalsChart').getContext('2d');
+        const chart = new Chart(ctx, {
+            type: 'bar',
+            data: {
+                labels: hospitalNames,
+                datasets: [{
+                    label: 'Total of nursess by hospital',
+                    data: nursesCounts,
+                    backgroundColor: '#679436',
+                    borderColor: '#0a1128',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+
+        const vaccinationData = {{ vaccinated_child | safe }};
+        const doseNames = vaccinationData.map(item => item[0]);
+        const childsCounts = vaccinationData.map(item => item[1]);
+        const ctxx = document.getElementById('vaccinationChart').getContext('2d');
+        const chart2 = new Chart(ctxx, {
+            type: 'bar',
+            data: {
+                labels: doseNames,
+                datasets: [{
+                    label: 'Total of children vaccinated',
+                    data: childsCounts,
+                    backgroundColor: '#427aa1',
+                    borderColor: '#0a1128',
+                    borderWidth: 1
+                }]
+            },
+            options: {
+                scales: {
+                    y: {
+                        beginAtZero: true
+                    }
+                }
+            }
+        });
+    </script>
+    {% endblock %}
+</body>
+
+</html>

@@ -1,0 +1,45 @@
+{% extends "user-1.html" %}
+
+{% block title %}VaxWise | My Profile{% endblock %}
+
+{% block content %}
+<div class="container content">
+    <div class="container col-md-6 form">
+        <h4>My Profile</h4>
+        <div>
+            <label for="firstName">First Name</label>
+            <input type="text" id="firstName" value="{{ user.first_name }}" />
+        </div>
+        <div>
+            <br>
+            <label for="lastName">Last Name</label>
+            <input type="text" id="lastName" value="{{ user.last_name }}" />
+        </div>
+        <div>
+            <br>
+            <label for="email">Email</label>
+            <input type="text" id="email" value="{{ user.email }}" />
+        </div>
+        <div>
+            <br>
+            <label for="password">Password</label>
+            <input type="password" id="password" placeholder="Password" />
+        </div>
+        <div>
+            <br>
+            <label for="password2">Password (Confirm)</label>
+            <input type="password" id="password2" placeholder="Password" />
+        </div>
+        <br>
+        <p id='error_message-1' style="text-align: center;">&nbsp;</p>
+        <div class="d-flex justify-content-center">
+            <button class="confirm-btn" onclick="submitUpdateUser('{{ user.email }}')">Save</button>
+        </div>
+        <br />
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+<script src="../static/scripts/user-3.js"></script>
+{% endblock %}

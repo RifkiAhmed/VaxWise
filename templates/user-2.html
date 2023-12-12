@@ -1,0 +1,215 @@
+{% extends "user-1.html" %}
+
+{% block title %}VaxWise | Vaccines{% endblock %}
+
+{% block content %}
+<div class="container-fluid content">
+    <h5 style="text-align: center; padding-bottom: 10px; margin: 0px;">Vaccination Schedule</h5>
+    <div class="container col-md-12 table-responsive content">
+        
+        <table class="table table-bordered">
+            <thead>
+                <!-- <tr>
+                    <th colspan="14"><h5>Vaccination schedule 2023</h5></th>
+                </tr> -->
+                <tr>
+                    <th style="vertical-align: middle;" class="aquamarine middle">Age /<br>Vaccine against</th>
+                    <th style="vertical-align: middle;" class="aquamarine middle">24H</th>
+                    <th style="vertical-align: middle;" class="aquamarine middle">Week 4</th>
+                    <th style="vertical-align: middle;" class="aquamarine middle">Week 8</th>
+                    <th style="vertical-align: middle;" class="aquamarine middle">Week 10</th>
+                    <th style="vertical-align: middle;" class="aquamarine middle">Week 12</th>
+                    <th style="vertical-align: middle;" class="aquamarine middle">Week 16</th>
+                    <th style="vertical-align: middle;" class="aquamarine middle">Week 18</th>
+                    <th style="vertical-align: middle;" class="aquamarine middle">Month 6</th>
+                    <th style="vertical-align: middle;" class="aquamarine middle">Month 9</th>
+                    <th style="vertical-align: middle;" class="aquamarine middle">Month 12</th>
+                    <th style="vertical-align: middle;" class="aquamarine middle">Month 18</th>
+                    <th style="vertical-align: middle;" class="aquamarine middle">Year 5</th>
+                    <th style="vertical-align: middle;" class="aquamarine middle">Year 11</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td style="vertical-align: middle;" class="azure middle" rowspan="2">Hepatitis B (HB)</td>
+                    <td style="vertical-align: middle;" class="middle azure">HBn administered at birth</td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle;" class="middle azure">If dose not administered at birth</td>
+                    <td style="vertical-align: middle;" class="middle azure">HB1</td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle;" class="middle burlywood">BCG Tuberculosis</td>
+                    <td class="cellEmpty"></td>
+                    <td style="vertical-align: middle;" class="middle burlywood">BCG</td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle;" class="middle cornflowerblue">Polio (peros)</td>
+                    <td class="cellEmpty"></td>
+                    <td style="vertical-align: middle;" class="middle cornflowerblue">VPO1</td>
+                    <td style="vertical-align: middle;" class="middle cornflowerblue">VPO2</td>
+                    <td class="cellEmpty"></td>
+                    <td style="vertical-align: middle;" class="middle cornflowerblue">VPO3</td>
+                    <td style="vertical-align: middle;" class="middle cornflowerblue">VPO4</td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td style="vertical-align: middle;" class="middle cornflowerblue">VPO5</td>
+                    <td style="vertical-align: middle;" class="middle cornflowerblue">VPO6</td>
+                    <td class="cellEmpty"></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle;" class="middle yellowgreen">Diphtheria, Tetanus, Pertussis, Hib, HB (Pentavalent vaccine)</td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td style="vertical-align: middle;" class="middle yellowgreen">Penta1</td>
+                    <td class="cellEmpty"></td>
+                    <td style="vertical-align: middle;" class="middle yellowgreen">Penta2</td>
+                    <td style="vertical-align: middle;" class="middle yellowgreen">Penta3</td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle;" class="middle darkgoldenrod">Pneumococcal</td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td style="vertical-align: middle;" class="middle darkgoldenrod">PCV1</td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td style="vertical-align: middle;" class="middle darkgoldenrod">PCV2</td>
+                    <td style="vertical-align: middle;" class="middle darkgoldenrod">PCV3</td>
+                    <td class="cellEmpty"></td>
+                    <td style="vertical-align: middle;" class="middle darkgoldenrod">PCV4</td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle;" class="middle deeppink">Rotavirus</td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td style="vertical-align: middle;" class="middle deeppink">Rota1</td>
+                    <td class="cellEmpty"></td>
+                    <td style="vertical-align: middle;" class="middle deeppink">Rota2</td>
+                    <td style="vertical-align: middle;" class="middle deeppink">Rota3</td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle;" class="middle gold">Polio (inactivated)</td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td style="vertical-align: middle;" class="middle gold">VP1</td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle;" class="middle mediumseagreen">Measles and Rubella (MR)</td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td style="vertical-align: middle;" class="middle mediumseagreen">MR1</td>
+                    <td class="cellEmpty"></td>
+                    <td style="vertical-align: middle;" class="middle mediumseagreen">MR2</td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle;" class="middle orchid">Diphtheria, Tetanus, Pertussis (DTP)</td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td style="vertical-align: middle;" class="middle orchid">DTP1</td>
+                    <td style="vertical-align: middle;" class="middle orchid">DTP2</td>
+                    <td class="cellEmpty"></td>
+                </tr>
+                <tr>
+                    <td style="vertical-align: middle;" class="middle teal">Papillomavirus (HPV)</td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td class="cellEmpty"></td>
+                    <td style="vertical-align: middle;" class="middle teal">HPV 2doses</td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>
+{% endblock %}
+
+{% block js %}
+{% endblock %}

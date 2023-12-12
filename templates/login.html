@@ -1,0 +1,21 @@
+{% extends "index.html" %}
+
+{% block title %} VaxWise | Sign in {% endblock %}
+
+{% block signInSingUp %}
+
+<div class="container sign-in_sign-up col-sm-12 col-md-6">
+  <h4>Sign in to VaxWise</h4>
+  <p style="text-align: center;">You don't have an account ?</p>
+  <a href="/sign-up"> Sign Up now</a>
+    <input type="email" id="login_email" placeholder="Email">
+    <input type="password" id="login_pwd" placeholder="Password">
+    <p id="error_message-1" style="text-align: center;">&nbsp;</p>
+    <button class="confirm-btn" onclick="connect()" > Connect </button>
+</div>
+
+{% endblock %}
+
+{% block js %}
+<script src="../static/scripts/login.js"></script>
+{% endblock %}

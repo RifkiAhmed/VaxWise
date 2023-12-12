@@ -1,0 +1,52 @@
+{% extends "nurse-1.html" %}
+
+{% block title %}VaxWise | My Profile{% endblock %}
+
+{% block content %}
+<div class="container content">
+    <div class="container col-md-6 form">
+        <h4>My Profile</h4>
+        <div>
+            <label for="firstName-2">First name</label>
+            <input type="text" id="firstName-2" name="firstName" value="{{ user.first_name }}" />
+        </div>
+        <div>
+            <br>
+            <label for="lastName-2">Last name</label>
+            <input type="text" id="lastName-2" name="lastName" value="{{ user.last_name }}" />
+        </div>
+        <div>
+            <br>
+            <label for="email-2">Email</label>
+            <input type="text" id="email-2" name="email" value="{{ user.email }}" />
+        </div>
+        <div>
+            <br>
+            <label for="hospital-2">Hospital</label>
+            <input type="text" id="hospital-2" name="email" value="{{ hospital.name }}" disabled />
+        </div>
+        <div>
+            <br>
+            <label for="password-2">Password</label>
+            <input type="password" id="password-2" name="password" placeholder="Password" />
+        </div>
+        <div>
+            <br>
+            <label for="password2-2">Password (Confirm)</label>
+            <input type="password" id="password2-2" name="password2" placeholder="Confirm password" />
+        </div>
+        <br />
+        <p id='error_message-1' style="text-align: center;">&nbsp;</p>
+
+        <div class="d-flex justify-content-center">
+            <button class="confirm-btn" onclick="submitUpdateNurse('{{user.id}}', '{{user.email}}')">Save</button>
+        </div>
+        <br />
+    </div>
+    <br />
+</div>
+{% endblock %}
+
+{% block js %}
+    <script src="../static/scripts/nurse-3.js"></script>
+{% endblock %}
