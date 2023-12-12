@@ -1,0 +1,63 @@
+.content {
+    max-width: 100%;
+    padding: 40px 0px 0px 100px;
+}
+
+.div {
+    margin-bottom: 40px;
+}
+
+.intro h1 {
+    font-family: 'Aclonica';
+}
+
+.intro h5 {
+    font-family: 'Alegreya';
+}
+
+.intro p {
+    font-family: 'Alegreya';
+    text-align: justify;
+    margin-top: 20px;
+    font-size: 18px;
+    margin-bottom: 0px;
+    max-width: 520px;
+}
+
+.intro a {
+    font-family: 'Alegreya';
+    color: blue;
+    font-size: 18px;
+    text-decoration: underline;
+}
+
+.Low {
+    color: red;
+    text-decoration: underline;
+}
+
+
+.Surplus {
+    color: green;
+    text-decoration: underline;
+}
+
+.circular-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.circular {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    flex-direction: column;
+    width: 150px;
+    height: 150px;
+    border: 1px solid gray;
+    border-radius: 50%;
+    margin: auto;
+    color: #427aa1;
+    box-shadow: 0px 0px 24px #427aa1;
+}

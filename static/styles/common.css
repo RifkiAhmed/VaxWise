@@ -1,0 +1,182 @@
+body {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin: 0;
+}
+
+.home {
+    background: linear-gradient(to top, #ebf2fa, #427aa1);
+}
+
+.content {
+    flex: 1;
+}
+
+.container-fluid {
+    width: 100%;
+}
+
+.base_home {
+    position: sticky;
+    top: 0;
+    z-index: 1;
+    margin-bottom: 5px;
+}
+
+.modal-header {
+    background-color: #05668d;
+}
+
+.modal-body {
+    background: #05668d;
+}
+
+.modal-body input {
+    background-color: #e0fbfc;
+    border: 1px solid #427aa1;
+}
+
+.modal-footer {
+    background: #427aa1;
+}
+
+.modal-btn {
+    background-color: #e0fbfc;
+    border: 1px solid #1282a2;
+    border-radius: 4px;
+}
+
+.chart {
+    margin: 40px 0px;
+}
+
+select {
+    padding: 5px;
+    background-color: #e0fbfc;
+}
+
+button {
+    margin: 0px 10px;
+}
+
+mark {
+    background-color: red;
+    color: white;
+    border-radius: 4px;
+    padding: 5px 10px;
+}
+
+.modal h4, .content h4 {
+    color: #e0fbfc;
+    text-align: center;
+    width: 100%;
+    display: block;
+    padding: 20px;
+}
+
+label {
+    color: #e0fbfc;
+}
+
+.vaccine-done, .vaccine-n-done {
+    padding: 5px 15px;
+    border: 2px solid gray;
+    border-radius: 4px;
+    margin-top: 5px;
+    display: inline-block;
+    cursor:pointer;
+}
+
+.vaccine-done {
+    background-color: #a5be00;
+}
+
+.vaccine-n-done {
+    background-color: #c5c3c6;
+}
+
+.update-delete-btn {
+    background-color: #ffffff;
+    padding: 5px 20px;
+    border-radius: 4px;
+    border : 1px solid #CCC;
+    width: 70px;
+    margin: 5px;
+}
+
+.delete-btn, .cancel-btn, .confirm-btn, .add-btn {
+    color: #FFFFFF;
+    width: 120px;
+    box-shadow: 2px 2px black;
+    border-radius: 4px;
+    padding: 5px;
+}
+
+.delete-btn:hover, .cancel-btn:hover, .confirm-btn:hover, .add-btn:hover {
+    opacity: 0.8;
+}
+
+.delete-btn {
+    background-color: #FF5A5F;
+}
+
+.confirm-btn {
+    background-color: #022b3a;
+    font-size: large;
+}
+
+.add-btn {
+    background-color: #022b3a;
+    font-size: large;
+    padding: 10px;
+    width: 140px;
+}
+
+.cancel-btn {
+    color: #000000;
+}
+
+.welcome {
+    min-height: 400px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.welcome h4 {
+    color: #3e5c76;
+}
+
+.children, .form {
+    border-radius: 10px;
+    border: 2px solid ivory;
+    background: linear-gradient(to top, #ebf2fa, #427aa1);
+}
+
+.fa-user {
+    color: #ebf2fa;
+    padding: 25px 25px;
+    vertical-align:top;
+}
+
+.child-doses {
+    padding: 30px 20px;
+    border-bottom: 1px solid #CCCCCC;
+}
+
+.fa-pencil-alt, .fa-trash-alt {
+    color: #000;
+}
+
+.update-delete-btn:hover {
+    opacity: 0.8;
+}
+
+.form input, textarea {
+    width: 100%;
+    padding: 10px;
+    background-color: #e0fbfc;
+    border: 1px solid #427aa1;
+}

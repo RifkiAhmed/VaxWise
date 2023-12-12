@@ -1,0 +1,21 @@
+header {
+    background-color: #05668d;
+}
+
+.nav-item {
+    padding: 0px 20px;
+}
+
+.nav-link {
+    color: #fefcfb;
+    font-size:large;
+    font-weight: lighter;
+}
+
+.nav-link:hover {
+    color: #bfdbf7;
+}
+
+.navbar-toggler {
+    color: gray;
+}

@@ -1,0 +1,44 @@
+.sign-in_sign-up {
+    background: linear-gradient(to top, #ebf2fa, #427aa1);
+    border-radius: 20px;
+    padding: 50px;
+    width: 50%;
+    height: 650px;
+    margin: auto;
+    border: 1px solid ivory;
+}
+
+.sign-in_sign-up h4 {
+    font-family: 'Alegreya';
+    text-align: center;
+    margin-bottom: 60px;
+}
+
+.sign-in_sign-up input {
+    display: block;
+    margin: 15px auto;
+    width: 90%;
+    padding: 8px;
+    background-color: #e0fbfc;
+    border: 1px solid #427aa1;
+
+}
+
+.sign-in_sign-up button {
+    display: block;
+    margin: 10px auto;
+    padding: 5px 20px;
+    border: 2px solid ivory;
+    box-shadow: 4px 8px 4px gray;
+}
+
+.sign-in_sign-up p {
+    font-family: 'Alegreya';
+    text-align: center;
+}
+
+.sign-in_sign-up a {
+    font-family: 'Alegreya';
+    display: block;
+    text-align: center;
+}
