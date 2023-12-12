@@ -1,0 +1,19 @@
+# Requirements:
+# sudo apt install -y gunicorn
+# change user: vagrant
+# .vaxwise-env
+
+
+[Unit]
+Description=gunicorn process to serve vaxwise app
+After=network.target
+
+[Service]
+User=vagrant
+Group=vagrant
+WorkingDirectory=/vagrant/vaxwise
+EnvironmentFile=/home/vagrant/.vaxwise-env
+ExecStart=/usr/bin/gunicorn --bind 0.0.0.0:5001 --workers 3 --access-logfile /tmp/vaxwise-access.log --error-logfile /tmp/vaxwise-error.log vaxwise:app      
+
+[Install]
+WantedBy=multi-user.target
