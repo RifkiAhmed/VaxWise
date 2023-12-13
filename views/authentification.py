@@ -108,7 +108,7 @@ def login():
                     verify_email(user)
                     return jsonify({'href': '/verification'})
                 login_user(user, remember=True)
-                if email == os.getenv('ADMIN_USERNAME').lower():
+                if email == os.getenv('ADMIN_EMAIL').lower():
                     return jsonify({'href': '/admin'})
                 return jsonify({'href': '/'})
             else:
