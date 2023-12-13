@@ -37,7 +37,7 @@ To get started with VaxWise, follow these steps:
     export MYSQL_PWD='';         # MySQL password
     export MYSQL_HOST='';        # MySQL host
     export MYSQL_DB='';          # MySQL database name
-    export ADMIN_USERNAME='';    # Admin email
+    export ADMIN_EMAIL='';       # Admin email
     export SECRET_KEY='';        # Secret key for app
     export MAIL_USERNAME='';     # Email username
     export MAIL_PASSWORD='';     # Email password
